@@ -1,0 +1,133 @@
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* neutral  */
+    --Very-dark-blue-gb: hsl(217, 54%, 11%);
+    --Very-dark-blue-card: hsl(216, 50%, 16%);
+    --Very-dark-blue: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    background-color: var(--Very-dark-blue-gb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.card {
+    max-width: 300px;
+    background: var(--Very-dark-blue-card);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card .photo {
+    max-width: 100%;
+    border-radius: 20px;
+    position: relative;
+}
+.card .container-img::before {
+    content: "";
+    position: absolute;
+    background-image: url(images/icon-view.svg);
+    left: 50%;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+}
+.card .container-img {
+    position: relative;
+    transition: .5s;
+}
+.card .container-img::after {
+    content: "";
+    background-color: var(--Cyan);
+    width: 0%;
+    height: 0%;
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.card .container-img:hover::after,
+.card .container-img:hover::before {
+    z-index: 1;
+}
+.card .container-img:hover::after {
+    width: 100%;
+    height: 100%;
+}
+.card h1 {
+   color: var(--White);
+   font-size: 1.4rem;
+   width: fit-content;
+   cursor: pointer;
+}
+.card h1:hover {
+    color: var(--Cyan);
+}
+.card p {
+    color: var(--Soft-blue);
+    margin-bottom: 0px;
+ }
+ .card .time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card .time .time-one {
+    padding:  20px 0px;
+}
+ .card .time-one {
+    color: var(--Cyan);
+    font-size: 0.9rem;
+ }
+ .card .time-two {
+    color: var(--Soft-blue);
+    font-size: 0.9rem;
+ }
+ .card .time-one img {
+    margin-right: 5px;
+ }
+ .card .time-two img {
+    margin-right: 5px;
+ }
+ 
+
+.card .info {
+    display: flex;
+    align-items: center;
+    color: var(--White);
+    font-size: 1rem;
+    border-top: 1px solid var(--Soft-blue);
+    padding-top: 16px;
+}
+.card .info:hover {
+    color: var(--Cyan);
+}
+.card .info span {
+    color: var(--Soft-blue);
+    font-size: 1rem;
+    margin: 0px 5px 0px 10px;
+}
+.card .info img {
+    width: 30px;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+}
